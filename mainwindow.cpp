@@ -4,6 +4,8 @@
 #include <curl/curl.h>
 #include <string>
 #include "metarretriever.h"
+#include "metardecoder.h"
+#include "metar.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -24,6 +26,9 @@ void MainWindow::on_btnBuscar_clicked()
     if(validate_icao(icao)) {
         MetarRetriever * metarRetriever = new MetarRetriever();
         std::string metar = metarRetriever->get_metar(icao.toStdString());
+
+        MetarDecoder *decoder = new MetarDecoder();
+        decoder->decode(metar);
 
         ui->textMetar->setText(QString::fromStdString(metar));
     } else {

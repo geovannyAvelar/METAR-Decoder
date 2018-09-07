@@ -10,6 +10,6 @@ struct Metar {
     int temperature;
     int dew_point;
     int pressure;
-} Metar;
+};
 
 #endif // METAR_H
