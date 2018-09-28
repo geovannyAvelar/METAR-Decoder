@@ -27,7 +27,8 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     httphandler.cpp \
     metarretriever.cpp \
-    metardecoder.cpp
+    metardecoder.cpp \
+    stringutils.cpp
 
 LIBS += -lcurl
 
@@ -35,6 +36,7 @@ HEADERS  += mainwindow.h \
     httphandler.h \
     metarretriever.h \
     metardecoder.h \
-    metar.h
+    metar.h \
+    stringutils.h
 
 FORMS    += mainwindow.ui
